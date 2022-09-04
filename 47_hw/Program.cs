@@ -3,8 +3,6 @@
 // 1 4 8 19 
 // 5 -2 33 -2 
 // 77 3 8 1
-// 
-// 
 
 Console.Write("Введите m  ");
 int m = Convert.ToInt32(Console.ReadLine()); //кол  строк
@@ -17,8 +15,7 @@ int[,] GetMatrix(int rowsCount, int columnsCount, int leftRange, int rightRange)
 {
     int[,] matrix = new int[rowsCount, columnsCount];//подгот матр, создание- назван, память выд new int, указать сколько стр стлб
 
-    Random rand = new Random();//
-
+    Random rand = new Random();
     for (int i = 0; i < matrix.GetLength(0); i++)// GetLength(0) это метод, поэтому скобки, 0 строки
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
@@ -26,7 +23,6 @@ int[,] GetMatrix(int rowsCount, int columnsCount, int leftRange, int rightRange)
             matrix[i, j] = rand.Next(leftRange, rightRange);//обращ к ячейке матрицы
         }
     }
-
     return matrix;
 }
 // Console.WriteLine(string.Join(", ", ourMatrix ));//здесь не работает
