@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Study GB\\HW_7\\47_hw\\47_hw.csproj": {}
+    "D:\\Study GB\\HW_7\\HW_7\\47_hw\\47_hw.csproj": {}
   },
   "projects": {
-    "D:\\Study GB\\HW_7\\47_hw\\47_hw.csproj": {
+    "D:\\Study GB\\HW_7\\HW_7\\47_hw\\47_hw.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Study GB\\HW_7\\47_hw\\47_hw.csproj",
+        "projectUniqueName": "D:\\Study GB\\HW_7\\HW_7\\47_hw\\47_hw.csproj",
         "projectName": "47_hw",
-        "projectPath": "D:\\Study GB\\HW_7\\47_hw\\47_hw.csproj",
+        "projectPath": "D:\\Study GB\\HW_7\\HW_7\\47_hw\\47_hw.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\Study GB\\HW_7\\47_hw\\obj\\",
+        "outputPath": "D:\\Study GB\\HW_7\\HW_7\\47_hw\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
