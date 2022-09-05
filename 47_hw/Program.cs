@@ -11,7 +11,7 @@ int n = Convert.ToInt32(Console.ReadLine()); //кол столб
 
 double[,] ourMatrix = GetMatrix(m, n, -10, 10);//вызвать написаный метод для какой то матрицы
 PrintMatrix(ourMatrix);//вызов метода 
-double[,] GetMatrix(int rowsCount, int columnsCount, double leftRange, double rightRange)// метод, парам.: число строк, столб, лев диапаз и прав
+double[,] GetMatrix(int rowsCount, int columnsCount, int leftRange, int rightRange)// метод, парам.: число строк, столб, лев диапаз и прав
 {
     double[,] matrix = new double[rowsCount, columnsCount];//подгот матр, создание- назван, память выд new int, указать сколько стр стлб
 
@@ -19,9 +19,9 @@ double[,] GetMatrix(int rowsCount, int columnsCount, double leftRange, double ri
     for (int i = 0; i < matrix.GetLength(0); i++)// GetLength(0) это метод, поэтому скобки, 0 строки
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
-        {
-            matrix[i, j] = rand.NextDouble(leftRange, rightRange);//обращ к ячейке матрицы
-        }
+        {           
+            //  matrix[i, j] = ((rightRange + 1 - leftRange) * rand.NextDouble() + leftRange);//то же работает
+            matrix[i, j] = rand.NextDouble()*rand.Next(leftRange, rightRange);
     }
     return matrix;
 }
@@ -32,7 +32,7 @@ void PrintMatrix(double[,] matrix)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            Console.Write(matrix[i, j] + " ");
+            Console.Write(matrix[i, j] + " ");//Math.Round
         }
         Console.WriteLine();//перенос строки
     }
