@@ -9,10 +9,13 @@ Console.WriteLine("Введите m");
 int m = Convert.ToInt32(Console.ReadLine()); //количество строк
 Console.WriteLine("Введите n");
 int n = Convert.ToInt32(Console.ReadLine()); //количество столбцов
+Console.WriteLine("Введите i");
+int i = Convert.ToInt32(Console.ReadLine()); //  адрес стр
+Console.WriteLine("Введите j");
+int j = Convert.ToInt32(Console.ReadLine()); //  адрес столб
 int[,] ourMatrix = GetMatrix(m, n, -10, 10);
 PrintMatrix(ourMatrix);
-int res = ValueThisElemen(ourMatrix);
-Console.WriteLine(res);
+// ValueThisElement(ourMatrix);
 
 int[,] GetMatrix(int rowsCount, int columnsCount, int leftRange, int rightRange)
 {
@@ -27,7 +30,14 @@ int[,] GetMatrix(int rowsCount, int columnsCount, int leftRange, int rightRange)
             matrix[i, j] = rand.Next(leftRange, rightRange);
         }
     }
-
+    if (i >= m && j >= n)
+    {
+        Console.WriteLine("такого числа в массиве нет");
+    }
+    else
+    {
+        Console.WriteLine($"значение элемента на указанной позиции = {matrix[i, j]} ");
+    }
     return matrix;
 }
 void PrintMatrix(int[,] matrix)
@@ -41,20 +51,26 @@ void PrintMatrix(int[,] matrix)
         Console.WriteLine();
     }
 }
-Console.WriteLine("Введите i ");
-int i = Convert.ToInt32(Console.ReadLine()); //количество строк
-Console.WriteLine("Введите j ");
-int j = Convert.ToInt32(Console.ReadLine()); //количество столбцов
+// Console.WriteLine("Введите i ");  //хочу доделать этот вариант, но ума не приложу как
+// int i = Convert.ToInt32(Console.ReadLine()
+// Console.WriteLine("Введите j ");
+// int j = Convert.ToInt32(Console.ReadLine()); 
 
-    int ValueThisElement(int[,] matrix)
-    {
-               if (i <= matrix.GetLength(0) && j <= matrix.GetLength(1))
-        {
-           res= matrix[i, j]; 
-        }
-        else
-        {
-            Console.WriteLine("такого числа в массиве нет");
-        }
-        return res;
-    }
+// void ValueThisElement(int[,] matrix)// как то включить сюда i и j? или ????
+// {
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matrix.GetLength(1); j++)
+//         {
+//             for (i <= matrix.GetLength(0) && j <= matrix.GetLength(1))
+//             {
+//                 Console.WriteLine($"значение элемента на указанной позиции = {matrix[i, j]} ");
+//             }
+//             else
+//             {
+//                 Console.WriteLine("такого числа в массиве нет");
+//             }
+//         }
+//     }
+// }
+

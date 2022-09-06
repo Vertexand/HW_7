@@ -9,10 +9,9 @@ Console.WriteLine("Введите m");
 int m = Convert.ToInt32(Console.ReadLine()); //количество строк
 Console.WriteLine("Введите n");
 int n = Convert.ToInt32(Console.ReadLine()); //количество столбцов
-int[,] ourMatrix = GetMatrix(m, n, -10, 10);
+int[,] ourMatrix = GetMatrix(m, n, 0, 10);
 PrintMatrix(ourMatrix);
 average(ourMatrix);
-
 
 int[,] GetMatrix(int rowsCount, int columnsCount, int leftRange, int rightRange)
 {
@@ -40,33 +39,39 @@ void PrintMatrix(int[,] matrix)
         Console.WriteLine();
     }
 }
-void average(int[,] matrix)//метод сред ариф по стобцам
+
+
+void average(int[,] matrix)//метод сред ариф по стобцам  работает 
 {
-    for (int i = 0; i < matrix.GetLength(0); i++)//строки
+    double[] b = new double[matrix.GetLength(1)];
+    int k = 0;
+    for (int j = 0; j < matrix.GetLength(1); j++)//столб 
     {
-        for (int j = 0; j < matrix.GetLength(1); j++)//столбцы
+        double summa = 0;
+        for (int i = 0; i < matrix.GetLength(0); i++)//строки
         {
-            ArithmeticMean = (matrix[i, j] + matrix[i, j]) / matrix.GetLength(0);//перебор только строк i
+            summa += matrix[i, j];
         }
-        Console.WriteLine(string.Join(", ", ArithmeticMean));
+        b[k] = summa / matrix.GetLength(0);
+        Console.Write(b[k] + " ");
+        k++;
     }
 }
 
 
-
-
-// Console.Write("Введите произвольно числа через пробел: ");
-// string str = Console.ReadLine();
-// string[] arrStr = str.Split();
-// int[] numbers = arrStr.Select(int.Parse).ToArray(); //int[] arr = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
-
-// int count = 0;
-// for (int i = 0; i < numbers.Length; i++)
+// void average(int[,] matrix)//метод сред ариф по стобцам не доделан 06.09.22
 // {
-//     if (numbers[i] > 0)
+//     for (int i = 0; i < matrix.GetLength(0); i++)//строки
 //     {
-//         count++;
+//         for (int j = 0; j < matrix.GetLength(1); j++)//столбцы
+//         {
+//            ArithmMean  = (matrix[i, j] ++) / matrix.GetLength(0);//перебор только строк i
+
+//         }
+//         Console.WriteLine(string.Join(", ", s));
 //     }
 // }
-// // Console.WriteLine(string.Join(", ", numbers));
-// Console.WriteLine($"Всего чисел больше 0: {count}");
+
+
+
+
